@@ -42,5 +42,5 @@ app.post('/resolve', (req: Request, res: Response) => {
 });
 
 app.listen(port || 3000, function () {
-  console.log('App is running on port 3000!');
+  console.log(`tsiny is running on port ${port}`);
 });
