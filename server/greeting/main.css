@@ -38,8 +38,9 @@ button {
   background-color: transparent;
 }
 
-#result :first-child {
-  transition: 0.2s ease-in-out;
+#result {
+  transition: 200ms ease-in-out;
+  text-align: center;
 }
 
 .description {
