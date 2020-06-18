@@ -1,9 +1,6 @@
 body {
-  background: linear-gradient(
-    to right,
-    #c33764,
-    #1d2671
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #b06ab3, #4568dc);
+
   color: whitesmoke;
   display: flex;
   justify-content: center;
@@ -26,6 +23,21 @@ body {
   align-self: flex-end;
 }
 
+#long_url {
+  font-family: monospace;
+  border-radius: 3px;
+  border: none;
+  height: 20px;
+}
+
+button {
+  height: 24px;
+  border-radius: 3px;
+  border: 0.5px solid whitesmoke;
+  color: whitesmoke;
+  background-color: transparent;
+}
+
 #result {
   transition: 0.2s ease-in-out;
 }
@@ -41,6 +53,11 @@ body {
 .github_btns {
   display: flex;
   justify-content: space-around;
+}
+
+.github_btns a {
+  width: 50px;
+  height: 50px;
 }
 
 .content {
