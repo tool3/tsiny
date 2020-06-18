@@ -12,16 +12,22 @@ body {
   height: 90vh;
 }
 
-h1 {
+.welcome_title {
   font-size: 7em;
+  font-weight: bold;
   margin: none;
 }
 
 .welcome {
-  display: inline-block;
-  position: absolute;
-  top: 145px;
-  left: 305px;
+  display: flex;
+}
+
+.welcome_image {
+  align-self: flex-end;
+}
+
+#result {
+  transition: 0.2s ease-in-out;
 }
 
 .description {
