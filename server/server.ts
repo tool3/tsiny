@@ -4,9 +4,9 @@ import * as bodyParser from "body-parser";
 import NodeCache from 'node-cache';
 import { join } from 'path';
 
-const db = new NodeCache({ stdTTL: 0 });
+const db: NodeCache = new NodeCache({ stdTTL: 0 });
 const app: Application = express();
-const port = process.env.PORT || 3000;
+const port: number | string = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use('/', express.static(join(__dirname, 'greeting')))
 
