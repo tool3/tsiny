@@ -47,10 +47,7 @@
         const result = await fetch("https://tsiny.herokuapp.com/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
         const responseObj = await result.json()
         const target = document.getElementById("result");
-        const element = document.createElement("a")
-        element.href = responseObj.short_url;
-        element.innerHTML = responseObj.short_url;
-        target.innerHTML = element;
+        target.innerHTML = responseObj.short_url;
         console.info(responseObj.short_url);
       } catch (error) {
         alert(error);
