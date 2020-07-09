@@ -1,70 +1,21 @@
-body {
-  background: linear-gradient(to right, #b06ab3, #4568dc);
-
-  color: whitesmoke;
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: monospace;
-  height: 90vh;
-}
-
-.welcome_title {
-  font-size: 7em;
-  font-weight: bold;
-  margin: none;
-}
-
-.welcome {
-  display: flex;
-}
-
-.welcome_image {
-  align-self: flex-end;
-}
-
-#long_url {
-  font-family: monospace;
-  border-radius: 3px;
-  border: none;
-  height: 20px;
+  flex-direction: column;
+  font-family: "IBM Plex Sans";
 }
 
 button {
-  height: 24px;
-  border-radius: 3px;
-  border: 0.5px solid whitesmoke;
-  color: whitesmoke;
-  background-color: transparent;
+  color: white;
+  background-color: #1e1e1e;
 }
 
-#result {
-  transition: 200ms ease-in-out;
+.hero-copy {
+  padding-right: 0 !important;
   text-align: center;
 }
 
-.description {
-  font-size: 2em;
-}
-
-.copyright {
-  font-size: 1.5em;
-}
-
-.github_btns {
-  display: flex;
-  justify-content: space-around;
-}
-
-.github_btns a {
-  width: 50px;
-  height: 50px;
-}
-
-.content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.site-header-inner {
+  justify-content: center;
 }

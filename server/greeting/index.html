@@ -1,62 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tsiny</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./main.css">
 
-  <link rel="stylesheet" href="./main.css" type="text/css" />
-  <link href="./favicon.ico" type="ico" />
 </head>
 
-<body>
-  <div class="content">
-    <div class="header">
-      <div class="welcome">
-        <div class="welcome_title">tsiny </div>
-        <img src="./tsiny_circle.png" width="30" height="30" class="welcome_image" />
-      </div>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <img src="./tsiny.png" alt="Logo" width="">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <a class="github-fork-ribbon" href="https://github.com/tool3/tsiny" data-ribbon="Fork me on GitHub"
+            title="Fork me on GitHub">Fork me on GitHub</a>
+        <main class="main">
+            <section class="hero">
+                <div class="container">
 
-      <div class="description">
-        url shortener service
-      </div>
+                    <div class="hero-inner">
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">Shorten any URL</h1>
+                            <p class="hero-paragraph">get a short url from a long url, try it here</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="url_shortener">
+                <input id="long_url" placeholder="input long URL..." size="29" />
+            </div>
+            <br />
+            <button onclick="send()">Shorten</button><br /><br />
+            <div id="result"></div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <div class="footer-copyright">Tal Hayut &copy; 2020</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="url_shortener">
-      <input id="long_url" placeholder="input long URL..." size="29" />
-      <button onclick="send()">Shorten</button><br />
-      <div id="result"></div>
-    </div>
-    <div class="footer">
-      <p class="copyright">
-        Tal Hayut &copy; 2020;
-      </p>
-      <div class="github-btn">
-        <a href="https://github.com/tool3/tsiny"><img
-            src="data:image/png;base64,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"></a>
-        <a href="https://github.com/tool3"><img
-            src="data:image/png;base64,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"></a>
-        <a href="https://github.com/tool3/tsiny/fork"><img
-            src="data:image/png;base64,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"></a>
-      </div>
-    </div>
-  </div>
-  </div>
 </body>
 <script>
-  async function send() {
-    const input = document.getElementById("long_url").value;
-    const json = JSON.stringify({ url: input });
-    try {
-      const result = await fetch("https://tsiny.herokuapp.com/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
-      const responseObj = await result.json()
-      const target = document.getElementById("result");
-      target.innerHTML = responseObj.short_url;
-      console.info(responseObj.short_url);
-    } catch (error) {
-      alert(error);
+    async function send() {
+        const input = document.getElementById("long_url").value;
+        console.log(input);
+        const json = JSON.stringify({ url: input });
+        try {
+            const result = await fetch("https://tsiny.herokuapp.com/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
+            const responseObj = await result.json()
+            const target = document.getElementById("result");
+            target.innerHTML = responseObj.short_url;
+            console.info(responseObj.short_url);
+        } catch (error) {
+            alert(error);
+        }
     }
-  }
 </script>
 
 </html>
