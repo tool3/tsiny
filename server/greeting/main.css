@@ -30,6 +30,9 @@ button {
   button {
     width: 83%;
   }
+  input {
+    padding: 0 1em;
+  }
   #long_url {
     align-self: center;
     justify-self: center;
