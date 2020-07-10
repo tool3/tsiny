@@ -6,6 +6,10 @@
   font-family: "IBM Plex Sans";
 }
 
+#copy {
+  visibility: hidden;
+}
+
 button {
   color: white;
   font-weight: bold;
@@ -13,7 +17,7 @@ button {
   border: 1px solid gray;
   background-color: #1e1e1e;
 }
-.url_shortener{
+.url_shortener {
   justify-self: center;
   align-self: center;
 }

@@ -50,6 +50,7 @@
             <br />
             <button onclick="send()">Shorten</button><br />
             <div id="result"></div>
+            <button id="copy" onclick="clipboard()">Copy</button><br />
         </main>
 
         <footer class="site-footer">
@@ -68,26 +69,21 @@
         const input = document.getElementById("long_url").value;
         const json = JSON.stringify({ url: input });
         try {
-            const result = await fetch("https://tsiny.herokuapp.com/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
+            const result = await fetch("http://localhost:3000/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
             const responseObj = await result.json()
             const target = document.getElementById("result");
             target.innerHTML = responseObj.short_url;
             console.info(responseObj.short_url);
-            const element = document.createElement('button', {
-                onclick=clipboard, value: 'copy'
-            });
-            document.appendChild(element);
+            document.getElementById("copy").style.visibility = "visible";
         } catch (error) {
             alert(error);
         }
     }
 
-    function clipboard() {
-        var copyText = document.getElementById("result");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        alert("Copied the text: " + copyText.value);
+    async function clipboard() {
+        const copyText = document.getElementById("result");
+        await navigator.clipboard.writeText(copyText.innerText);
+        alert("Copied the text: " + copyText.innerText);
     }
 </script>
 
