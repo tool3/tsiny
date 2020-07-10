@@ -24,7 +24,7 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
-  button {
+  button,input {
     width: 83%;
   }
 }
