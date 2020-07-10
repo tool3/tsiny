@@ -69,7 +69,7 @@
         const input = document.getElementById("long_url").value;
         const json = JSON.stringify({ url: input });
         try {
-            const result = await fetch("http://localhost:3000/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
+            const result = await fetch("https://tsiny.herokuapp.com/shorten", { method: "POST", headers: { "Content-Type": "application/json" }, body: json, json: true });
             const responseObj = await result.json()
             const target = document.getElementById("result");
             target.innerHTML = responseObj.short_url;
