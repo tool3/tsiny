@@ -82,8 +82,13 @@
 
     async function clipboard() {
         const copyText = document.getElementById("result");
-        await navigator.clipboard.writeText(copyText.innerText);
-        alert("Copied the text: " + copyText.innerText);
+        try {
+            await navigator.clipboard.writeText(copyText.innerText);
+            document.getElementById("copy").innerText = "✔";
+        } catch (error) {
+            throw error;
+        }
+
     }
 </script>
 
