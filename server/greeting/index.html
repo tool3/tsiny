@@ -48,7 +48,7 @@
                 <input id="long_url" placeholder="input long URL..." size="29" />
             </div>
             <br />
-            <button onclick="send()">Shorten</button><br /><br />
+            <button onclick="send()">Shorten</button><br />
             <div id="result"></div>
         </main>
 
@@ -74,9 +74,18 @@
             const target = document.getElementById("result");
             target.innerHTML = responseObj.short_url;
             console.info(responseObj.short_url);
+            document.appendChild(<button onclick="clipboard()">Copy</button><br />);
         } catch (error) {
             alert(error);
         }
+    }
+
+    function clipboard() {
+        var copyText = document.getElementById("result");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
     }
 </script>
 

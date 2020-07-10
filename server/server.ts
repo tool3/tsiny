@@ -3,11 +3,13 @@ import { generateId } from '../util/util';
 import * as bodyParser from "body-parser";
 import NodeCache from 'node-cache';
 import { join } from 'path';
+import cors from 'cors';
 
 const db: NodeCache = new NodeCache({ stdTTL: 0 });
 const app: Application = express();
 const port: number | string = process.env.PORT || 3000;
 app.use(bodyParser.json());
+app.use(cors());
 app.use('/', express.static(join(__dirname, 'greeting')))
 
 app.get('/:id', (req: Request, res: Response) => {
