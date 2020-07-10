@@ -13,7 +13,10 @@ button {
   border: 1px solid gray;
   background-color: #1e1e1e;
 }
-
+.url_shortener{
+  justify-sef: center;
+  align-self: center;
+}
 .hero-copy {
   padding-right: 0 !important;
   text-align: center;
