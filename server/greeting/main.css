@@ -27,7 +27,7 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
-  button,input {
+  button {
     width: 83%;
   }
   #long_url {
