@@ -27,4 +27,8 @@ button {
   button,input {
     width: 83%;
   }
+  input {
+    align-self: center;
+    justify-self: center;
+  }
 }
