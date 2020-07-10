@@ -8,6 +8,9 @@
 
 button {
   color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid gray;
   background-color: #1e1e1e;
 }
 
@@ -18,4 +21,10 @@ button {
 
 .site-header-inner {
   justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  button {
+    width: 83%;
+  }
 }
