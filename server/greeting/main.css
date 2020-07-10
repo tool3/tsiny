@@ -30,7 +30,7 @@ button {
   button,input {
     width: 83%;
   }
-  input {
+  #long_url {
     align-self: center;
     justify-self: center;
   }
